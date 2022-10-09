@@ -1,0 +1,41 @@
+
+  <form >
+    <div class="form-group">
+    <label>Id</label>
+    <input type="number" name="id" class="form-control" [(ngModel)]="product.id">
+
+    <label>Name</label>
+    <input type="text" name="name" class="form-control" [(ngModel)]="product.name">
+
+    <label>Description</label>
+    <input type="text" name="description" class="form-control" [(ngModel)]="product.description">
+
+    <label>Price</label>
+    <input type="number" name="price" class="form-control" [(ngModel)]="product.price">
+
+    <label>Stock</label>
+    <input type="text" name="stock" class="form-control" [(ngModel)]="product.stock">
+    <button class="btn btn-success" (click)="save()">Ajouter</button>
+
+
+
+</div>
+</form>
+<table class="table table-striped">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>price</th>
+    <th>stock</th>
+  </tr>
+  <tr  *ngFor="let p of listProduct">
+    <td>{{ p.id}}</td>
+    <td>{{ p.name}}</td>
+    <td>{{ p.description}}</td>
+    <td>{{ p.price}}</td>
+    <td>{{ p.stock}}</td>
+    <td><button  class="btn btn-danger" (click)="delete(p.id)">Delete</button></td>
+    <td><button  class="btn btn-warning" (click)="update(p.id)">Update</button></td>
+  </tr>
+</table>
